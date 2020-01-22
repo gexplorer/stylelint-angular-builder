@@ -1,0 +1,36 @@
+{
+    "name": "@gexplorer/stylelint-angular-builder",
+    "repository": "https://github.com/gexplorer/stylelint-angular-builder.git",
+    "version": "1.0.0",
+    "description": "Angular CLI third party builder for Stylelint.",
+    "main": "./lib/index.js",
+    "builders": "builders.json",
+    "scripts": {
+        "test": "exit 0",
+        "prebuild": "rimraf dist",
+        "build": "tsc",
+        "postbuild": "copyfiles package.json builders.json schema.json dist",
+        "package": "cd dist && yarn pack"
+    },
+    "keywords": [
+        "angular-cli",
+        "stylelint",
+        "angular",
+        "lint"
+    ],
+    "author": "Eder Elorriaga <gexplorer8@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@angular-devkit/architect": "^0.803.23",
+        "@types/glob": "^7.1.1",
+        "@types/stylelint": "^9.10.1",
+        "copyfiles": "^2.2.0",
+        "glob": "^7.1.6",
+        "rimraf": "^3.0.0",
+        "stylelint": "^13.0.0",
+        "typescript": "^3.7.5"
+    },
+    "peerDependencies": {
+        "stylelint": "^13.0.0"
+    }
+}
